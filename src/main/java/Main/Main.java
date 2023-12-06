@@ -92,7 +92,7 @@ public class Main {
         System.out.println("Tast 0 for at lukke program");
 
         int valg = input.nextInt();
-        switch(valg){
+        switch (valg) {
             case 1:
                 db.createCustomer(c1);
                 break;
@@ -178,6 +178,7 @@ public class Main {
                 break;
             case 0:
                 System.exit(0);
+                break;
         }
 
     }
