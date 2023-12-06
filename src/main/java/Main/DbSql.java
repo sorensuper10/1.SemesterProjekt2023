@@ -54,8 +54,8 @@ public class DbSql {
         try {
             String sql = "insert into Company (companyID, companyName, companyAdress, companyPostalcode, companyPhone, companyMail, companyCVR)";
             sql += "values (" + String.valueOf(co.getCompanyID()) + ",'" + co.getCompanyName() + "','" + co.getCompanyAddress();
-            sql += "','" + co.getCompanyPostalCode() + "','" + co.getCompanyPhone() + "','" + co.getCompanyCVR() + "',";
-            sql += "'" + (co.getCompanyMail()) + "'" + ")";
+            sql += "','" + co.getCompanyPostalCode() + "','" + co.getCompanyPhone() + "','" + co.getCompanyMail() + "',";
+            sql += "'" + (co.getCompanyCVR()) + "'" + ")";
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();
@@ -286,9 +286,9 @@ public class DbSql {
         return null;
     }
 
-    public void removeCustomer(Customer c) {
+    public void removeCustomer(int kundeID) {
         try {
-            String sql = "delete from Customer where customerID =" + String.valueOf(c.getCostumerID());
+            String sql = "delete from Customer where customerID =" + String.valueOf(kundeID);
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();
@@ -297,9 +297,9 @@ public class DbSql {
         }
     }
 
-    public void removePackage(Package p) {
+    public void removePackage(int pakkenr) {
         try {
-            String sql = "delete from Package where packageID = " + String.valueOf(p.getPackageID());
+            String sql = "delete from Package where packageID = " + String.valueOf(pakkenr);
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();
@@ -308,9 +308,9 @@ public class DbSql {
         }
     }
 
-    public void removeCompany(Company co) {
+    public void removeCompany(int firmaID) {
         try {
-            String sql = "delete from Company where companyID = " + String.valueOf(co.getCompanyID());
+            String sql = "delete from Company where companyID = " + String.valueOf(firmaID);
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();

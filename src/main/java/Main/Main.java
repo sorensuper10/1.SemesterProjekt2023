@@ -141,15 +141,15 @@ public class Main {
                 soegetfirma(co);
                 break;
             case 14:
-                db.removeCustomer(c1);
+                db.removeCustomer(1);
                 System.out.println("Kunden er slettet");
                 break;
             case 15:
-                db.removePackage(p1);
+                db.removePackage(1);
                 System.out.println("Pakken er slettet");
                 break;
             case 16:
-                db.removeCompany(co1);
+                db.removeCompany(1);
                 System.out.println("Firmaet er slettet");
                 break;
             case 17:

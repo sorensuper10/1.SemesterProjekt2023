@@ -14,24 +14,24 @@ public class SceneController {
     private Scene scene;
     private Parent root;
 
-    public void switchToScene1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Opret Kunde.fxml"));
+    public void switchToCreateCustomer(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Opretkunde.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void switchToStudieadmin(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Opret Studerende.fxml"));
+    public void switchToCreatePackage(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Opretpakke.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void switchToStudieadminSlet(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Slet Studerende.fxml"));
+    public void switchToCreateCompany(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Opretfirma.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

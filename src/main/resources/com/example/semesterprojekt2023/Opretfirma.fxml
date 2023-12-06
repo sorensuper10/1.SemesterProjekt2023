@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterprojekt2023.HelloController">
+   <children>
+      <Button layoutX="429.0" layoutY="148.0" mnemonicParsing="false" onAction="#onOpretFirmaClickIOpretFirma" text="Opret firma" />
+      <Label layoutX="32.0" layoutY="20.0" prefHeight="35.0" prefWidth="151.0" text="Indtast firmaID">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="67.0" prefHeight="35.0" prefWidth="162.0" text="Indtast firmanavn">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="120.0" prefHeight="35.0" prefWidth="178.0" text="Indtast firmaadresse">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="164.0" prefHeight="35.0" prefWidth="178.0" text="Indtast firmapostnr">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="207.0" prefHeight="35.0" prefWidth="161.0" text="Indtast firmatlf">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="251.0" prefHeight="35.0" prefWidth="178.0" text="Indtast firmamail">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="292.0" prefHeight="35.0" prefWidth="151.0" text="Indtast firmacvr">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="companyID" layoutX="183.0" layoutY="30.0" />
+      <TextField fx:id="companyName" layoutX="183.0" layoutY="72.0" />
+      <TextField fx:id="companyAdress" layoutX="218.0" layoutY="125.0" />
+      <TextField fx:id="companyPostalcode" layoutX="207.0" layoutY="169.0" />
+      <TextField fx:id="companyPhone" layoutX="192.0" layoutY="212.0" />
+      <TextField fx:id="companyMail" layoutX="192.0" layoutY="256.0" />
+      <TextField fx:id="companyCVR" layoutX="183.0" layoutY="297.0" />
+      <Label fx:id="firmaOprettet" layoutX="457.0" layoutY="100.0" />
+   </children>
+</AnchorPane>
