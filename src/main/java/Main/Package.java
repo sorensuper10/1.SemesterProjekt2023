@@ -12,8 +12,6 @@ private String finalDestination;
 private boolean sent;
 private boolean arrived;
 
-    private ArrayList<Package> packageTabel = new ArrayList<Package>();
-
     public Package() {
     }
 

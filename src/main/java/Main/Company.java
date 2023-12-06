@@ -18,8 +18,6 @@ public class Company {
 
     private String companyCVR;
 
-    private ArrayList<Company> companyTabel = new ArrayList<Company>();
-
     public Company() {
     }
 

@@ -6,18 +6,16 @@ public class TransportationInfo {
     private int id;
     private int packageID;
     private String destination;
-    private boolean arrived;
-
-    private ArrayList<TransportationInfo> transportationInfoTabel = new ArrayList<TransportationInfo>();
+    private String currentLocation;
 
     public TransportationInfo() {
     }
 
-    public TransportationInfo(int id, int packageID, String destination, boolean arrived) {
+    public TransportationInfo(int id, int packageID, String destination, String currentLocation) {
         this.id = id;
         this.packageID = packageID;
         this.destination = destination;
-        this.arrived = arrived;
+        this.currentLocation = currentLocation;
     }
 
     public int getId() {
@@ -44,12 +42,12 @@ public class TransportationInfo {
         this.destination = destination;
     }
 
-    public boolean isArrived() {
-        return arrived;
+    public String isCurrentLocation() {
+        return currentLocation;
     }
 
-    public void setArrived(boolean arrived) {
-        this.arrived = arrived;
+    public void setCurrentLocation(String currentLocation) {
+        this.currentLocation = currentLocation;
     }
 
     @Override
@@ -58,7 +56,7 @@ public class TransportationInfo {
                 "id=" + id +
                 ", packageID=" + packageID +
                 ", destination='" + destination + '\'' +
-                ", arrived=" + arrived +
+                ", arrived=" + currentLocation +
                 '}';
     }
 }

@@ -6,7 +6,6 @@ public class Customer {
     private int costumerID;
     private String costumerName, costumerLastName, costumerAddress, costumerPostalcode, costumerPhone, costumerMail;
 
-    private ArrayList<Customer> customerTabel = new ArrayList<Customer>();
     public Customer() {
     }
 

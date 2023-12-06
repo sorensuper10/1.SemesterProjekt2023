@@ -8,8 +8,6 @@ public class Locations {
 
     private String Address;
 
-    private ArrayList<Locations> locationTabel = new ArrayList<Locations>();
-
     public Locations() {
     }
 

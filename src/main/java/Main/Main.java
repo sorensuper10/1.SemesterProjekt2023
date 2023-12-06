@@ -24,15 +24,6 @@ public class Main {
         Customer c3 = new Customer(3, "Diaco", "Sabir", "Østerbro 6", "5000", "11211211", "diaco747@gmail.com");
         costumerTabel.add(c3);
 
-        Company co1 = new Company(1, "DAO", "Blommevej 8", "4700", "12345678", "dao@gmail.com", "1");
-        companyTabel.add(co1);
-
-        Company co2 = new Company(2, "Postnord", "Ringvejen", "5600", "96743672", "Postnord@live.dk", "2");
-        companyTabel.add(co2);
-
-        Company co3 = new Company(3, "GLS", "Præstøvej 4", "4700", "87654321", "gls@gmail.com", "3");
-        companyTabel.add(co3);
-
         Package p1 = new Package(1, 20.5, 20.5, "Dao", "Søren", "Meny Næstved", true, true);
         packageTabel.add(p1);
 
@@ -42,7 +33,17 @@ public class Main {
         Package p3 = new Package(3, 5.5, 5.5, "Postnord", "Diaco", "Brugsen Næstved", true, true);
         packageTabel.add(p3);
 
-        Package p4 = new Package(4,5,5,"Dao","Søren","Meny Næstved",true,true);
+        Package p4 = new Package(4, 5, 5, "Dao", "Søren", "Meny Næstved", true, true);
+        packageTabel.add(p4);
+
+        Company co1 = new Company(1, "DAO", "Blommevej 8", "4700", "12345678", "dao@gmail.com", "1");
+        companyTabel.add(co1);
+
+        Company co2 = new Company(2, "Postnord", "Ringvejen", "5600", "96743672", "Postnord@live.dk", "2");
+        companyTabel.add(co2);
+
+        Company co3 = new Company(3, "GLS", "Præstøvej 4", "4700", "87654321", "gls@gmail.com", "3");
+        companyTabel.add(co3);
 
         Locations l1 = new Locations(1, "Rødovre terminal");
         locationTabel.add(l1);
@@ -53,31 +54,50 @@ public class Main {
         Locations l3 = new Locations(3, "Jylland");
         locationTabel.add(l3);
 
-        TransportationInfo t1 = new TransportationInfo(1, 3, "Diaco hus", true);
+        TransportationInfo t1 = new TransportationInfo(1, 3, "Diaco hus", "Terminal");
         transportationInfoTabel.add(t1);
 
-        TransportationInfo t2 = new TransportationInfo(2, 2, "Sørens hus", true);
+        TransportationInfo t2 = new TransportationInfo(2, 2, "Sørens hus", "Meny Næstved");
         transportationInfoTabel.add(t2);
 
-        TransportationInfo t3 = new TransportationInfo(3, 3, "Mortens Hus", true);
+        TransportationInfo t3 = new TransportationInfo(3, 3, "Mortens Hus", "Min Købmand Næstved");
         transportationInfoTabel.add(t3);
 
-        System.out.println("1. Opret pakke");
-        System.out.println("2 Opret kunde");
+        System.out.println("1. Opret kunde");
+        System.out.println("2  Opret pakke");
         System.out.println("3. Opret firma");
         System.out.println("4. Opret lokation");
         System.out.println("5. Opret transportinfo");
-        System.out.println("6. Udskriv alle pakker");
+        System.out.println("6. Udskriv alle kunder");
+        System.out.println("7. Udskriv alle pakker");
+        System.out.println("8. Udskriv alle firmaer");
+        System.out.println("9. Udskriv alle lokationer");
+        System.out.println("10. Udskriv alle transportinfo");
+        System.out.println("11. Søg på en bestemt kunde");
+        System.out.println("12. Søg på en bestemt pakke");
+        System.out.println("13. Søg på et bestemt firma");
+        System.out.println("14 Slet kunde");
+        System.out.println("15 Slet pakke");
+        System.out.println("16 Slet firma");
+        System.out.println("17 Ændre en kundes fornavn");
+        System.out.println("18 Ændre en kundes efternavn");
+        System.out.println("19 Ændre en kundes adresse");
+        System.out.println("20 Ændre en kundes postnummer");
+        System.out.println("21 Ændre en kundes telefonnummer");
+        System.out.println("22 Ændre en kundes mail");
+        System.out.println("23 Ændre en pakkes info");
+        System.out.println("24 Ændre et firmas info");
+        System.out.println("25 Opdatere en pakkes lokation");
         System.out.println("Indtast valg");
         System.out.println("Tast 0 for at lukke program");
 
         int valg = input.nextInt();
         switch(valg){
             case 1:
-                db.createPackage(p2);
+                db.createCustomer(c1);
                 break;
             case 2:
-                db.createCustomer(c1);
+                db.createPackage(p1);
                 break;
             case 3:
                 db.createCompany(co1);
@@ -89,18 +109,77 @@ public class Main {
                 db.createTransportationInfo(t1);
                 break;
             case 6:
-                ArrayList <Package> packageList = db.udskrivPackages();
+                ArrayList<Customer> costumerList = db.udskrivAlleKunder();
+                udskrivCustomer(costumerList);
+                break;
+            case 7:
+                ArrayList<Package> packageList = db.udskrivAllePakker();
                 udskrivPackages(packageList);
+                break;
+            case 8:
+                ArrayList<Company> companyList = db.udskrivAlleFirmaer();
+                udskrivCompany(companyList);
+                break;
+            case 9:
+                ArrayList<Locations> locationList = db.udskrivAlleLokationer();
+                udskrivLocation(locationList);
+                break;
+            case 10:
+                ArrayList<TransportationInfo> transportInfoList = db.udskrivAlleTransportInfo();
+                udskrivTransportInfo(transportInfoList);
+                break;
+            case 11:
+                Customer c = db.soegenkunde(1);
+                soegenkunde(c);
+                break;
+            case 12:
+                Package p = db.soegenpakke(1);
+                soegenpakke(p);
+                break;
+            case 13:
+                Company co = db.soegetfirma(1);
+                soegetfirma(co);
+                break;
+            case 14:
+                db.removeCustomer(c1);
+                System.out.println("Kunden er slettet");
+                break;
+            case 15:
+                db.removePackage(p1);
+                System.out.println("Pakken er slettet");
+                break;
+            case 16:
+                db.removeCompany(co1);
+                System.out.println("Firmaet er slettet");
+                break;
+            case 17:
+                db.changeCustomerName();
+                System.out.println("Kundens navn er ændret");
+                break;
+            case 18:
+                db.changeCustomerLastName();
+                System.out.println("Kundens efternavn er ændret");
+                break;
+            case 19:
+                db.changeCustomerAdress();
+                System.out.println("Kundens adresse er ændret");
+                break;
+            case 20:
+                db.changeCustomerPostalcode();
+                System.out.println("Kundens postnummer er ændret");
+                break;
+            case 21:
+                db.changeCustomerPhone();
+                System.out.println("Kundens telefonnummer er ændret");
+                break;
+            case 22:
+                db.changeCustomerMail();
+                System.out.println("Kundens mail er ændret");
+                break;
             case 0:
                 System.exit(0);
         }
 
-
-        //udskrivCustomer(costumerTabel);
-        //udskrivCompany(companyTabel);
-        //udskrivPackages(packageTabel);
-        //udskrivLocation(locationTabel);
-        //udskrivTransportInfo(transportationInfoTabel);
     }
 
     public static void udskrivCustomer(ArrayList<Customer> a) {
@@ -152,7 +231,37 @@ public class Main {
             System.out.println(a.get(i).getId());
             System.out.println(a.get(i).getPackageID());
             System.out.println(a.get(i).getDestination());
-            System.out.println(a.get(i).isArrived());
+            System.out.println(a.get(i).isCurrentLocation());
         }
+    }
+
+    public static void soegenkunde(Customer c) {
+        System.out.println(c.getCostumerID());
+        System.out.println(c.getCostumerName());
+        System.out.println(c.getCostumerLastName());
+        System.out.println(c.getCostumerAddress());
+        System.out.println(c.getCostumerPostalcode());
+        System.out.println(c.getCostumerPhone());
+        System.out.println(c.getCostumerMail());
+    }
+    public static void soegenpakke(Package p){
+        System.out.println(p.getPackageID());
+        System.out.println(p.getSize());
+        System.out.println(p.getWeight());
+        System.out.println(p.getSender());
+        System.out.println(p.getReciever());
+        System.out.println(p.getFinalDestination());
+        System.out.println(p.isSent());
+        System.out.println(p.isArrived());
+    }
+
+    public static void soegetfirma(Company co){
+        System.out.println(co.getCompanyID());
+        System.out.println(co.getCompanyName());
+        System.out.println(co.getCompanyAddress());
+        System.out.println(co.getCompanyPostalCode());
+        System.out.println(co.getCompanyPhone());
+        System.out.println(co.getCompanyMail());
+        System.out.println(co.getCompanyCVR());
     }
 }
