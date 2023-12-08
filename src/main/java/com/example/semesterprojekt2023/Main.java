@@ -1,9 +1,24 @@
-package Main;
+package com.example.semesterprojekt2023;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("trackandtrace.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+        stage.setTitle("Track 'n' Trace");
+        stage.setScene(scene);
+        stage.show();
+    }
     public static void main(String[] args) {
         DbSql db = new DbSql();
 
@@ -85,9 +100,10 @@ public class Main {
         System.out.println("20 Ændre en kundes postnummer");
         System.out.println("21 Ændre en kundes telefonnummer");
         System.out.println("22 Ændre en kundes mail");
-        System.out.println("23 Ændre en pakkes info");
-        System.out.println("24 Ændre et firmas info");
-        System.out.println("25 Opdatere en pakkes lokation");
+        System.out.println("23 GUI");
+        System.out.println("24 Ændre en pakkes info");
+        System.out.println("25 Ændre et firmas info");
+        System.out.println("26 Opdatere en pakkes lokation");
         System.out.println("Indtast valg");
         System.out.println("Tast 0 for at lukke program");
 
@@ -176,6 +192,8 @@ public class Main {
                 db.changeCustomerMail();
                 System.out.println("Kundens mail er ændret");
                 break;
+            case 23:
+                launch();
             case 0:
                 System.exit(0);
                 break;

@@ -1,4 +1,4 @@
-package Main;
+package com.example.semesterprojekt2023;
 
 import java.sql.*;
 import java.util.ArrayList;

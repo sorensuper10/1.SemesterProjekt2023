@@ -1,9 +1,5 @@
 package com.example.semesterprojekt2023;
 
-import Main.Company;
-import Main.Customer;
-import Main.DbSql;
-import Main.Package;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
