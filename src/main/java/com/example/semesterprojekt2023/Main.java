@@ -111,18 +111,23 @@ public class Main extends Application {
         switch (valg) {
             case 1:
                 db.createCustomer(c1);
+                System.out.println("Kunde er oprettet");
                 break;
             case 2:
                 db.createPackage(p1);
+                System.out.println("Pakke er oprettet");
                 break;
             case 3:
                 db.createCompany(co1);
+                System.out.println("Firma er oprettet");
                 break;
             case 4:
                 db.createLocation(l1);
+                System.out.println("Lokation er oprettet");
                 break;
             case 5:
                 db.createTransportationInfo(t1);
+                System.out.println("Transportinfo er oprettet");
                 break;
             case 6:
                 ArrayList<Customer> costumerList = db.udskrivAlleKunder();
