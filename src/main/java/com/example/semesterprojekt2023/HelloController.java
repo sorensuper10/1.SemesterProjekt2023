@@ -22,6 +22,15 @@ public class HelloController {
     private Label firmaOprettet;
 
     @FXML
+    private Label kundeSlettet;
+
+    @FXML
+    private Label pakkeSlettet;
+
+    @FXML
+    private Label firmaSlettet;
+
+    @FXML
     private TextField kundeID;
 
     @FXML
@@ -163,5 +172,78 @@ public class HelloController {
         co.setCompanyCVR(companyCVRText);
         db.createCompany(co);
         firmaOprettet.setText("Firma er oprettet");
+    }
+
+    @FXML
+    protected void onSletKundeClick() {
+        DbSql db = new DbSql();
+        String kundeIDText = kundeID.getText();
+        int kundeID = Integer.parseInt(kundeIDText);
+        db.removeCustomer(kundeID);
+        kundeSlettet.setText("Kunden er slettet");
+    }
+
+    @FXML
+    protected void onSletPakkeClick() {
+        DbSql db = new DbSql();
+        String pakkeIDText = pakkeID.getText();
+        int pakkeID = Integer.parseInt(pakkeIDText);
+        db.removePackage(pakkeID);
+        pakkeSlettet.setText("Pakken er slettet");
+    }
+
+    @FXML
+    protected void onSletFirmaClick() {
+        DbSql db = new DbSql();
+        String firmaIDText = companyID.getText();
+        int firmaID = Integer.parseInt(firmaIDText);
+        db.removeCompany(firmaID);
+        firmaSlettet.setText("Firmaet er slettet");
+    }
+
+    @FXML
+    protected void onSoegKundeClick() {
+        Customer c;
+        DbSql db = new DbSql();
+        String kundeIDText = kundeID.getText();
+        int kundeID = Integer.parseInt(kundeIDText);
+        c = db.soegenkunde(kundeID);
+        fnavn.setText(c.getCostumerName());
+        enavn.setText(c.getCostumerLastName());
+        Adresse.setText(c.getCostumerAddress());
+        postnr.setText(c.getCostumerPostalcode());
+        telefon.setText(c.getCostumerPhone());
+        mail.setText(c.getCostumerMail());
+    }
+
+    @FXML
+    protected void onSoegPakkeClick() {
+        Package p;
+        DbSql db = new DbSql();
+        String pakkeIDText = pakkeID.getText();
+        int pakkeID = Integer.parseInt(pakkeIDText);
+        p = db.soegenpakke(pakkeID);
+        String ps = String.valueOf(pakkeStørrelse);
+        pakkeStørrelse.setText(ps);
+        String pv = String.valueOf(pakkeVægt);
+        pakkeVægt.setText(pv);
+        Sender.setText(p.getSender());
+        Modtager.setText(p.getReciever());
+        Endestation.setText(p.getFinalDestination());
+    }
+
+    @FXML
+    protected void onSoegCompanyClick() {
+        Company co;
+        DbSql db = new DbSql();
+        String companyIDText = companyID.getText();
+        int firmaID = Integer.parseInt(companyIDText);
+        co = db.soegetfirma(firmaID);
+        companyName.setText(co.getCompanyName());
+        companyAdress.setText(co.getCompanyAddress());
+        companyPostalcode.setText(co.getCompanyPostalCode());
+        companyPhone.setText(co.getCompanyPhone());
+        companyMail.setText(co.getCompanyMail());
+        companyCVR.setText(co.getCompanyCVR());
     }
 }

@@ -5,10 +5,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterprojekt2023.SceneController">
    <children>
-      <Button layoutX="260.0" layoutY="143.0" mnemonicParsing="false" onAction="#switchToCreateCustomer" text="Opret kunde" />
-      <Button layoutX="260.0" layoutY="169.0" mnemonicParsing="false" onAction="#switchToCreatePackage" prefHeight="26.0" prefWidth="83.0" text="Opret pakke" />
-      <Button layoutX="260.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchToCreateCompany" prefHeight="26.0" prefWidth="83.0" text="Opret firma" />
-      <Button layoutX="258.0" layoutY="221.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="83.0" text="Opret lokation" />
-      <Button layoutX="258.0" layoutY="247.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="83.0" text="Opret transportinfo" />
+      <Button layoutX="249.0" layoutY="69.0" mnemonicParsing="false" onAction="#switchToCreateCustomer" text="Opret kunde" />
+      <Button layoutX="249.0" layoutY="95.0" mnemonicParsing="false" onAction="#switchToCreatePackage" prefHeight="26.0" prefWidth="83.0" text="Opret pakke" />
+      <Button layoutX="249.0" layoutY="121.0" mnemonicParsing="false" onAction="#switchToCreateCompany" prefHeight="26.0" prefWidth="83.0" text="Opret firma" />
+      <Button layoutX="246.0" layoutY="147.0" mnemonicParsing="false" onAction="#switchToDeleteCustomer" text="Slet kunde" />
+      <Button layoutX="246.0" layoutY="173.0" mnemonicParsing="false" onAction="#switchToDeletePackage" text="Slet pakke" />
+      <Button layoutX="246.0" layoutY="199.0" mnemonicParsing="false" onAction="#switchToDeleteCompany" text="Slet firma" />
+      <Button layoutX="245.0" layoutY="225.0" mnemonicParsing="false" onAction="#switchToSearchCustomer" text="Søg en kunde" />
+      <Button layoutX="246.0" layoutY="251.0" mnemonicParsing="false" onAction="#switchToSearchPackage" text="Søg en pakke" />
+      <Button layoutX="242.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToSearchCompany" text="Søg et firma" />
    </children>
 </AnchorPane>
