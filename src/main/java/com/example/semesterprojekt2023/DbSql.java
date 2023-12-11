@@ -438,7 +438,7 @@ public class DbSql {
 
     public ArrayList<Customer> kundePakker(int CustomerID) {
         ArrayList<Customer> kundeTabel = new ArrayList<Customer>();
-        String sql = "select * from Customer where CustomerID = " + CustomerID;
+        String sql = "select * from CustomerPackages where CustomerID = " + CustomerID;
         try {
             Statement stmt = connection.createStatement();
             Statement stmt1 = connection.createStatement();
@@ -453,7 +453,7 @@ public class DbSql {
                 c.setCostumerPostalcode(rs.getString("customerPostalcode"));
                 c.setCostumerPhone(rs.getString("customerPhone"));
                 c.setCostumerMail(rs.getString("customerMail"));
-                String sql1 = "SELECT * from customerPackages left join Package on CustomerPackages.packageID=Package.packageID where CustomerPackages.customerID="+kundeNr;
+                String sql1 = "SELECT * from CustomerPackages left join Package on CustomerPackages.packageID=Package.packageID where CustomerPackages.customerID="+kundeNr;
                 ResultSet rs1 = stmt1.executeQuery(sql1);
                 while (rs1.next()) {
                     Package p = new Package();
@@ -477,7 +477,7 @@ public class DbSql {
 
     public void createCompanyPackages(Company co, Package p) {
         try {
-            String sql = "insert into Company (companyID, companyName, companyAdress, companyPostalcode, companyPhone, companyMail, companyCVR, packageID, packageSize, packageWeight, Sender, Reciever, FinalDestination, Sent, Arrived)";
+            String sql = "insert into CompanyPackages (companyID, companyName, companyAdress, companyPostalcode, companyPhone, companyMail, companyCVR, packageID, packageSize, packageWeight, Sender, Reciever, FinalDestination, Sent, Arrived)";
             sql += "values (" + String.valueOf(co.getCompanyID()) + ",'" + co.getCompanyName() + "','" + co.getCompanyAddress();
             sql += "','" + co.getCompanyPostalCode() + "','" + co.getCompanyPhone() + "','" + co.getCompanyMail() + "',";
             sql += "'" + (co.getCompanyCVR()) + "'";
@@ -492,7 +492,7 @@ public class DbSql {
     }
         public ArrayList<Company> firmaPakker(int companyID) {
             ArrayList<Company> companyTabel = new ArrayList<Company>();
-            String sql = "select * from Company where companyID = " + companyID;
+            String sql = "select * from CompanyPackages where companyID = " + companyID;
             try {
                 Statement stmt = connection.createStatement();
                 Statement stmt1 = connection.createStatement();
