@@ -39,7 +39,7 @@ public class Main extends Application {
         Customer c3 = new Customer(3, "Diaco", "Sabir", "Østerbro 6", "5000", "11211211", "diaco747@gmail.com");
         costumerTabel.add(c3);
 
-        Package p1 = new Package(1, 20.5, 20.5, "Dao", "Søren", "Meny Næstved", true, true);
+        Package p1 = new Package(1, 20.6, 20.5, "Dao", "Søren", "Meny Næstved", true, true);
         packageTabel.add(p1);
 
         Package p2 = new Package(2, 10.5, 10.5, "GLS", "Morten", "Min købmand Næstved", false, false);
@@ -91,19 +91,23 @@ public class Main extends Application {
         System.out.println("11. Søg på en bestemt kunde");
         System.out.println("12. Søg på en bestemt pakke");
         System.out.println("13. Søg på et bestemt firma");
-        System.out.println("14 Slet kunde");
-        System.out.println("15 Slet pakke");
-        System.out.println("16 Slet firma");
-        System.out.println("17 Ændre en kundes fornavn");
-        System.out.println("18 Ændre en kundes efternavn");
-        System.out.println("19 Ændre en kundes adresse");
-        System.out.println("20 Ændre en kundes postnummer");
-        System.out.println("21 Ændre en kundes telefonnummer");
-        System.out.println("22 Ændre en kundes mail");
-        System.out.println("23 GUI");
-        System.out.println("24 Ændre en pakkes info");
-        System.out.println("25 Ændre et firmas info");
-        System.out.println("26 Opdatere en pakkes lokation");
+        System.out.println("14. Slet kunde");
+        System.out.println("15. Slet pakke");
+        System.out.println("16. Slet firma");
+        System.out.println("17. Ændre en kundes fornavn");
+        System.out.println("18. Ændre en kundes efternavn");
+        System.out.println("19. Ændre en kundes adresse");
+        System.out.println("20. Ændre en kundes postnummer");
+        System.out.println("21. Ændre en kundes telefonnummer");
+        System.out.println("22. Ændre en kundes mail");
+        System.out.println("23. GUI");
+        System.out.println("24. Opret en pakke til en kunde");
+        System.out.println("25. Udskriv en kundes pakker");
+        System.out.println("26. Opret en pakke til et firma");
+        System.out.println("27. Udskriv firmaets pakker");
+        System.out.println("28. Ændre en pakkes info");
+        System.out.println("29. Ændre et firmas info");
+        System.out.println("30. Opdatere en pakkes lokation");
         System.out.println("Indtast valg");
         System.out.println("Tast 0 for at lukke program");
 
@@ -199,6 +203,18 @@ public class Main extends Application {
                 break;
             case 23:
                 launch();
+                break;
+            case 24:
+                db.createCustomerPackages(c1,p1);
+                break;
+            case 25:
+                db.kundePakker(1);
+                break;
+            case 26:
+                db.createCompanyPackages(co1,p1);
+                break;
+            case 27:
+                db.firmaPakker(1);
             case 0:
                 System.exit(0);
                 break;
@@ -255,7 +271,7 @@ public class Main extends Application {
             System.out.println(a.get(i).getId());
             System.out.println(a.get(i).getPackageID());
             System.out.println(a.get(i).getDestination());
-            System.out.println(a.get(i).isCurrentLocation());
+            System.out.println(a.get(i).getCurrentLocation());
         }
     }
 

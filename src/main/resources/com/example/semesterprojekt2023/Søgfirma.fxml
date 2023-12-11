@@ -3,54 +3,62 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterprojekt2023.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterprojekt2023.HelloController">
    <children>
-      <Button layoutX="429.0" layoutY="148.0" mnemonicParsing="false" onAction="#onSoegCompanyClick" text="Søg firma" />
-      <Label layoutX="32.0" layoutY="20.0" prefHeight="35.0" prefWidth="151.0" text="Indtast firmaID">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="25.0" layoutY="67.0" prefHeight="35.0" prefWidth="162.0" text="firmanavn">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="17.0" layoutY="120.0" prefHeight="35.0" prefWidth="178.0" text="firmaadresse">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="17.0" layoutY="164.0" prefHeight="35.0" prefWidth="178.0" text="firmapostnr">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="31.0" layoutY="207.0" prefHeight="35.0" prefWidth="161.0" text="firmatlf">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="17.0" layoutY="251.0" prefHeight="35.0" prefWidth="178.0" text="firmamail">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="25.0" layoutY="292.0" prefHeight="35.0" prefWidth="151.0" text="firmacvr">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <TextField fx:id="companyID" layoutX="183.0" layoutY="30.0" />
-      <TextField fx:id="companyName" layoutX="183.0" layoutY="72.0" />
-      <TextField fx:id="companyAdress" layoutX="218.0" layoutY="125.0" />
-      <TextField fx:id="companyPostalcode" layoutX="207.0" layoutY="169.0" />
-      <TextField fx:id="companyPhone" layoutX="192.0" layoutY="212.0" />
-      <TextField fx:id="companyMail" layoutX="192.0" layoutY="256.0" />
-      <TextField fx:id="companyCVR" layoutX="183.0" layoutY="297.0" />
+      <ImageView fitHeight="400.0" fitWidth="300.0">
+         <image>
+            <Image url="@pngtree-line-white-background-business-picture-image_1326839.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="209.0" layoutY="329.0" mnemonicParsing="false" onAction="#onSoegCompanyClick" prefHeight="25.0" prefWidth="75.0" text="Search" />
+      <TextField fx:id="companyID" layoutX="75.0" layoutY="61.0" promptText="Company ID *" />
+      <TextField fx:id="companyName" layoutX="133.0" layoutY="110.0" />
+      <TextField fx:id="companyAdress" layoutX="133.0" layoutY="143.0" />
+      <TextField fx:id="companyPostalcode" layoutX="133.0" layoutY="179.0" />
+      <TextField fx:id="companyPhone" layoutX="133.0" layoutY="214.0" />
+      <TextField fx:id="companyMail" layoutX="133.0" layoutY="249.0" />
+      <TextField fx:id="companyCVR" layoutX="133.0" layoutY="284.0" />
       <Label fx:id="firmaOprettet" layoutX="457.0" layoutY="100.0" />
+      <Text fontSmoothingType="LCD" layoutX="76.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Company" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Label layoutX="26.0" layoutY="105.0" prefHeight="35.0" prefWidth="151.0" text="Name:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="138.0" prefHeight="35.0" prefWidth="151.0" text="Adress:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="174.0" prefHeight="35.0" prefWidth="151.0" text="Postal code:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="209.0" prefHeight="35.0" prefWidth="161.0" text="Telephone:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="244.0" prefHeight="35.0" prefWidth="178.0" text="E-mail:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="279.0" prefHeight="35.0" prefWidth="151.0" text="CVR:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

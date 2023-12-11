@@ -18,6 +18,8 @@ public class Company {
 
     private String companyCVR;
 
+    ArrayList<Package> customerPackages = new ArrayList<>();
+
     public Company() {
     }
 

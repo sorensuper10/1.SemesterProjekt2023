@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterprojekt2023.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterprojekt2023.SceneController">
    <children>
-      <Button layoutX="249.0" layoutY="69.0" mnemonicParsing="false" onAction="#switchToCreateCustomer" text="Opret kunde" />
-      <Button layoutX="249.0" layoutY="95.0" mnemonicParsing="false" onAction="#switchToCreatePackage" prefHeight="26.0" prefWidth="83.0" text="Opret pakke" />
-      <Button layoutX="249.0" layoutY="121.0" mnemonicParsing="false" onAction="#switchToCreateCompany" prefHeight="26.0" prefWidth="83.0" text="Opret firma" />
-      <Button layoutX="246.0" layoutY="147.0" mnemonicParsing="false" onAction="#switchToDeleteCustomer" text="Slet kunde" />
-      <Button layoutX="246.0" layoutY="173.0" mnemonicParsing="false" onAction="#switchToDeletePackage" text="Slet pakke" />
-      <Button layoutX="246.0" layoutY="199.0" mnemonicParsing="false" onAction="#switchToDeleteCompany" text="Slet firma" />
-      <Button layoutX="245.0" layoutY="225.0" mnemonicParsing="false" onAction="#switchToSearchCustomer" text="Søg en kunde" />
-      <Button layoutX="246.0" layoutY="251.0" mnemonicParsing="false" onAction="#switchToSearchPackage" text="Søg en pakke" />
-      <Button layoutX="242.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToSearchCompany" text="Søg et firma" />
+      <ImageView fitHeight="400.0" fitWidth="300.0">
+         <image>
+            <Image url="@pngtree-line-white-background-business-picture-image_1326839.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="87.0" layoutY="56.0" mnemonicParsing="false" onAction="#switchToCreateCustomer" prefHeight="30.0" prefWidth="125.0" text="Opret kunde" />
+      <Button layoutX="87.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToCreatePackage" prefHeight="30.0" prefWidth="125.0" text="Opret pakke" />
+      <Button layoutX="87.0" layoutY="129.0" mnemonicParsing="false" onAction="#switchToCreateCompany" prefHeight="30.0" prefWidth="125.0" text="Opret firma" />
+      <Button layoutX="87.0" layoutY="166.0" mnemonicParsing="false" onAction="#switchToDeleteCustomer" prefHeight="30.0" prefWidth="125.0" text="Slet kunde" />
+      <Button layoutX="87.0" layoutY="203.0" mnemonicParsing="false" onAction="#switchToDeletePackage" prefHeight="30.0" prefWidth="125.0" text="Slet pakke" />
+      <Button layoutX="87.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchToDeleteCompany" prefHeight="30.0" prefWidth="125.0" text="Slet firma" />
+      <Button layoutX="87.0" layoutY="279.0" mnemonicParsing="false" onAction="#switchToSearchCustomer" prefHeight="30.0" prefWidth="125.0" text="Søg en kunde" />
+      <Button layoutX="87.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToSearchPackage" prefHeight="30.0" prefWidth="125.0" text="Søg en pakke" />
+      <Button layoutX="87.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToSearchCompany" prefHeight="30.0" prefWidth="125.0" text="Søg et firma" />
+      <Text fontSmoothingType="LCD" layoutX="81.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Track and Trace" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

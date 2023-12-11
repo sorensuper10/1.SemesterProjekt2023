@@ -42,10 +42,9 @@ public class TransportationInfo {
         this.destination = destination;
     }
 
-    public String isCurrentLocation() {
+    public String getCurrentLocation() {
         return currentLocation;
     }
-
     public void setCurrentLocation(String currentLocation) {
         this.currentLocation = currentLocation;
     }

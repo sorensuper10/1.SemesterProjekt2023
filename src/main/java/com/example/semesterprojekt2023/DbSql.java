@@ -20,12 +20,12 @@ public class DbSql {
         }
     }
 
-    public ArrayList createPackage(Package p) {
+    public ArrayList createCustomer(Customer c) {
         try {
-            String sql = "insert into Package (packageID, packageSize, packageWeight, sender, reciever, finaldestination, sent, arrived)";
-            sql += "values (" + String.valueOf(p.getPackageID()) + ",'" + p.getSize() + "','" + p.getWeight();
-            sql += "','" + p.getSender() + "','" + p.getReciever() + "','" + p.getFinalDestination() + "',";
-            sql += String.valueOf(p.isSent()) + "," + String.valueOf(p.isArrived()) + ")";
+            String sql = "insert into Customer (customerID, customerName, CustomerLastName, customerAdress, customerPostalCode, customerPhone, customerMail)";
+            sql += "values (" + String.valueOf(c.getCostumerID()) + ",'" + c.getCostumerName() + "','" + c.getCostumerLastName();
+            sql += "','" + c.getCostumerAddress() + "','" + c.getCostumerPostalcode() + "','" + c.getCostumerPhone() + "',";
+            sql += "'" + (c.getCostumerMail()) + "'" + ")";
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();
@@ -35,12 +35,12 @@ public class DbSql {
         return null;
     }
 
-    public ArrayList createCustomer(Customer c) {
+    public ArrayList createPackage(Package p) {
         try {
-            String sql = "insert into Customer (customerID, customerName, CustomerLastName, customerAdress, customerPostalCode, customerPhone, customerMail)";
-            sql += "values (" + String.valueOf(c.getCostumerID()) + ",'" + c.getCostumerName() + "','" + c.getCostumerLastName();
-            sql += "','" + c.getCostumerAddress() + "','" + c.getCostumerPostalcode() + "','" + c.getCostumerPhone() + "',";
-            sql += "'" + (c.getCostumerMail()) + "'" + ")";
+            String sql = "insert into Package (packageID, packageSize, packageWeight, sender, reciever, finaldestination, sent, arrived)";
+            sql += "values (" + String.valueOf(p.getPackageID()) + ",'" + p.getSize() + "','" + p.getWeight();
+            sql += "','" + p.getSender() + "','" + p.getReciever() + "','" + p.getFinalDestination() + "',";
+            sql += String.valueOf(p.isSent()) + "," + String.valueOf(p.isArrived()) + ")";
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();
@@ -80,9 +80,9 @@ public class DbSql {
 
     public ArrayList createTransportationInfo(TransportationInfo t) {
         try {
-            String sql = "insert into Transportationinfo (ID, packageID, Destination, arrived)";
-            sql += "values (" + String.valueOf(t.getId()) + ",'" + t.getPackageID() + "','" + t.getDestination() + "',";
-            sql += String.valueOf(t.isCurrentLocation()) + ")";
+            String sql = "insert into Transportationinfo (ID, packageID, Destination, currentLocation)";
+            sql += "values (" + String.valueOf(t.getId()) + ",'" + t.getPackageID() + "','" + t.getDestination() + ",'";
+            sql += t.getCurrentLocation() + ")";
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();
@@ -420,4 +420,112 @@ public class DbSql {
             throwables.printStackTrace();
         }
     }
-}
+
+    public void createCustomerPackages(Customer c, Package p) {
+        try {
+            String sql = "insert into CustomerPackages (customerID, customerName, CustomerLastName, customerAdress, customerPostalCode, customerPhone, customerMail, packageID, packageSize, packageWeight, Sender, Reciever, FinalDestination, Sent, Arrived)";
+            sql += "values (" + String.valueOf(c.getCostumerID()) + ",'" + c.getCostumerName() + "','" + c.getCostumerLastName();
+            sql += "','" + c.getCostumerAddress() + "','" + c.getCostumerPostalcode() + "','" + c.getCostumerPhone() + "',";
+            sql += "'" + (c.getCostumerMail()) + "'";
+            sql += "'" + String.valueOf(p.getPackageID()) + ",'" + p.getSize() + "','" + p.getWeight();
+            sql += "','" + p.getSender() + "','" + p.getReciever() + "','" + p.getFinalDestination() + "',";
+            sql += String.valueOf(p.isSent()) + "," + String.valueOf(p.isArrived()) + ")";
+            stmt.execute(sql);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public ArrayList<Customer> kundePakker(int CustomerID) {
+        ArrayList<Customer> kundeTabel = new ArrayList<Customer>();
+        String sql = "select * from Customer where CustomerID = " + CustomerID;
+        try {
+            Statement stmt = connection.createStatement();
+            Statement stmt1 = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Customer c = new Customer();
+                int kundeNr = rs.getInt("customerID");
+                c.setCostumerID(kundeNr);
+                c.setCostumerName(rs.getString("customerName"));
+                c.setCostumerLastName(rs.getString("customerLastname"));
+                c.setCostumerAddress(rs.getString("customerAdress"));
+                c.setCostumerPostalcode(rs.getString("customerPostalcode"));
+                c.setCostumerPhone(rs.getString("customerPhone"));
+                c.setCostumerMail(rs.getString("customerMail"));
+                String sql1 = "SELECT * from customerPackages left join Package on CustomerPackages.packageID=Package.packageID where CustomerPackages.customerID="+kundeNr;
+                ResultSet rs1 = stmt1.executeQuery(sql1);
+                while (rs1.next()) {
+                    Package p = new Package();
+                    p.setPackageID(rs1.getInt("packageID"));
+                    p.setSize(rs1.getDouble("packageSize"));
+                    p.setWeight(rs1.getDouble("PackageWeight"));
+                    p.setSender(rs1.getString("Sender"));
+                    p.setReciever(rs1.getString("Reciever"));
+                    p.setFinalDestination(rs1.getString("Final Destination"));
+                    c.customerPackages.add(p);
+                }
+                kundeTabel.add(c);
+            }
+            stmt.close();
+            stmt1.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return kundeTabel;
+    }
+
+    public void createCompanyPackages(Company co, Package p) {
+        try {
+            String sql = "insert into Company (companyID, companyName, companyAdress, companyPostalcode, companyPhone, companyMail, companyCVR, packageID, packageSize, packageWeight, Sender, Reciever, FinalDestination, Sent, Arrived)";
+            sql += "values (" + String.valueOf(co.getCompanyID()) + ",'" + co.getCompanyName() + "','" + co.getCompanyAddress();
+            sql += "','" + co.getCompanyPostalCode() + "','" + co.getCompanyPhone() + "','" + co.getCompanyMail() + "',";
+            sql += "'" + (co.getCompanyCVR()) + "'";
+            sql += "'" + String.valueOf(p.getPackageID()) + ",'" + p.getSize() + "','" + p.getWeight();
+            sql += "','" + p.getSender() + "','" + p.getReciever() + "','" + p.getFinalDestination() + "',";
+            sql += String.valueOf(p.isSent()) + "," + String.valueOf(p.isArrived()) + ")";
+            Statement stmt = connection.createStatement();
+            stmt.execute(sql);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+        public ArrayList<Company> firmaPakker(int companyID) {
+            ArrayList<Company> companyTabel = new ArrayList<Company>();
+            String sql = "select * from Company where companyID = " + companyID;
+            try {
+                Statement stmt = connection.createStatement();
+                Statement stmt1 = connection.createStatement();
+                ResultSet rs = stmt.executeQuery(sql);
+                while (rs.next()) {
+                    Company co = new Company();
+                    int companyNr = rs.getInt("companyID");
+                    co.setCompanyID(companyNr);
+                    co.setCompanyName(rs.getString("companyName"));
+                    co.setCompanyAddress(rs.getString("companyAdress"));
+                    co.setCompanyPostalCode(rs.getString("companyPostalcode"));
+                    co.setCompanyPhone(rs.getString("companyPhone"));
+                    co.setCompanyMail(rs.getString("companyMail"));
+                    co.setCompanyCVR(rs.getString("companyCVR"));
+                    String sql1 = "SELECT * from CompanyPackages left join Package on CompanyPackages.packageID=Package.packageID where CompanyPackages.companyID="+companyNr;
+                    ResultSet rs1 = stmt1.executeQuery(sql1);
+                    while (rs1.next()) {
+                        Package p = new Package();
+                        p.setPackageID(rs1.getInt("packageID"));
+                        p.setSize(rs1.getDouble("packageSize"));
+                        p.setWeight(rs1.getDouble("PackageWeight"));
+                        p.setSender(rs1.getString("Sender"));
+                        p.setReciever(rs1.getString("Reciever"));
+                        p.setFinalDestination(rs1.getString("Final Destination"));
+                        co.customerPackages.add(p);
+                    }
+                    companyTabel.add(co);
+                }
+                stmt.close();
+                stmt1.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            return companyTabel;
+        }
+    }
