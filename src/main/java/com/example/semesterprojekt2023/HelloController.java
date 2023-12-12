@@ -1,6 +1,7 @@
 package com.example.semesterprojekt2023;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -64,6 +65,18 @@ public class HelloController {
 
     @FXML
     private TextField Endestation;
+
+    @FXML
+    private TextField sentText;
+
+    @FXML
+    private TextField arrivedText;
+
+    @FXML
+    private CheckBox sent;
+
+    @FXML
+    private CheckBox delivered;
 
     @FXML
     private TextField sendt;
@@ -131,18 +144,28 @@ public class HelloController {
         Package p = new Package();
         DbSql db = new DbSql();
         String pakkeIDText = pakkeID.getText();
-        double pakkeStørrelseText = pakkeStørrelse.getHeight();
-        double pakkeVægtText = pakkeVægt.getHeight();
+        String x = pakkeStørrelse.getText();
+        double pakkeStørrelseText = Double.parseDouble(x);
+        String y = pakkeVægt.getText();
+        double pakkeVægtText = Double.parseDouble(y);
         String SenderText = Sender.getText();
         String ModtagerText = Modtager.getText();
         String endeStationText = Endestation.getText();
         int pakkeID = Integer.parseInt(pakkeIDText);
+        boolean oksent = false;
+        if (sent.isSelected())
+            oksent = true;
+        boolean okdelivered = false;
+        if (delivered.isSelected())
+            okdelivered = true;
         p.setPackageID(pakkeID);
         p.setSize(pakkeStørrelseText);
         p.setWeight(pakkeVægtText);
         p.setSender(SenderText);
         p.setReciever(ModtagerText);
         p.setFinalDestination(endeStationText);
+        p.setSent(oksent);
+        p.setArrived(okdelivered);
         db.createPackage(p);
         pakkeOprettet.setText("Pakke er oprettet");
     }
@@ -219,13 +242,21 @@ public class HelloController {
         String pakkeIDText = pakkeID.getText();
         int pakkeID = Integer.parseInt(pakkeIDText);
         p = db.soegenpakke(pakkeID);
-        String ps = String.valueOf(pakkeStørrelse);
+        String ps = String.valueOf(p.getSize());
         pakkeStørrelse.setText(ps);
-        String pv = String.valueOf(pakkeVægt);
+        String pv = String.valueOf(p.getWeight());
         pakkeVægt.setText(pv);
         Sender.setText(p.getSender());
         Modtager.setText(p.getReciever());
         Endestation.setText(p.getFinalDestination());
+        if (p.isSent())
+            sentText.setText("Yes");
+        else
+            sentText.setText("No");
+        if (p.isArrived())
+            arrivedText.setText("Yes");
+        else
+            arrivedText.setText("No");
     }
 
     @FXML

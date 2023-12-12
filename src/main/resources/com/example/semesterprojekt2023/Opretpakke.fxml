@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -23,14 +24,14 @@
       <TextField fx:id="Sender" layoutX="75.0" layoutY="167.0" promptText="Sender *" />
       <TextField fx:id="Modtager" layoutX="75.0" layoutY="202.0" promptText="Reciever *" />
       <TextField fx:id="Endestation" layoutX="75.0" layoutY="237.0" promptText="Final destination *" />
-      <TextField fx:id="mail" layoutX="75.0" layoutY="272.0" promptText="Package already sent? *" />
       <Label fx:id="kundeCreated" layoutX="457.0" layoutY="100.0" />
-      <TextField fx:id="mail1" layoutX="75.0" layoutY="307.0" promptText="Package delivered? *" />
       <Label fx:id="pakkeOprettet" layoutX="456.0" layoutY="109.0" />
       <Text fontSmoothingType="LCD" layoutX="58.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Package Registration" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
+      <CheckBox fx:id="delivered" layoutX="75.0" layoutY="317.0" mnemonicParsing="false" text="Package already delivered?" />
+      <CheckBox fx:id="sent" layoutX="75.0" layoutY="279.0" mnemonicParsing="false" text="Package already sent?" />
    </children>
 </AnchorPane>

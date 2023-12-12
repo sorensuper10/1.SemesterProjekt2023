@@ -14,8 +14,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("trackandtrace.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
-        stage.setTitle("Track 'n' Trace");
+        Scene scene = new Scene(fxmlLoader.load(), 300, 400);
+        stage.setTitle("Track and Trace");
         stage.setScene(scene);
         stage.show();
     }
@@ -23,6 +23,8 @@ public class Main extends Application {
         DbSql db = new DbSql();
 
         Scanner input = new Scanner(System.in);
+
+        Scanner brugerIDinput = new Scanner(System.in);
 
         ArrayList<Customer> costumerTabel = new ArrayList<Customer>();
         ArrayList<Company> companyTabel = new ArrayList<Company>();
@@ -100,7 +102,7 @@ public class Main extends Application {
         System.out.println("20. Ændre en kundes postnummer");
         System.out.println("21. Ændre en kundes telefonnummer");
         System.out.println("22. Ændre en kundes mail");
-        System.out.println("23. GUI");
+        System.out.println("23. Graphic User Interface");
         System.out.println("24. Opret en pakke til en kunde");
         System.out.println("25. Udskriv en kundes pakker");
         System.out.println("26. Opret en pakke til et firma");
@@ -170,7 +172,7 @@ public class Main extends Application {
                 System.out.println("Kunden er slettet");
                 break;
             case 15:
-                db.removePackage(1);
+                db.removePackage(2);
                 System.out.println("Pakken er slettet");
                 break;
             case 16:
@@ -215,6 +217,7 @@ public class Main extends Application {
                 break;
             case 27:
                 db.firmaPakker(1);
+                break;
             case 0:
                 System.exit(0);
                 break;

@@ -81,8 +81,8 @@ public class DbSql {
     public ArrayList createTransportationInfo(TransportationInfo t) {
         try {
             String sql = "insert into Transportationinfo (ID, packageID, Destination, currentLocation)";
-            sql += "values (" + String.valueOf(t.getId()) + ",'" + t.getPackageID() + "','" + t.getDestination() + ",'";
-            sql += t.getCurrentLocation() + ")";
+            sql += "values (" + String.valueOf(t.getId()) + "," + String.valueOf(t.getPackageID()) + ",'" + t.getDestination() + "','";
+            sql += t.getCurrentLocation() + "')";
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();

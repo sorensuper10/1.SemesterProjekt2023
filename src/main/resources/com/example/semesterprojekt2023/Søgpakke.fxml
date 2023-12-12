@@ -53,14 +53,14 @@
       <TextField fx:id="Sender" editable="false" layoutX="125.0" layoutY="169.0" />
       <TextField fx:id="Modtager" editable="false" layoutX="125.0" layoutY="204.0" />
       <TextField fx:id="Endestation" editable="false" layoutX="125.0" layoutY="239.0" />
-      <TextField fx:id="mail" editable="false" layoutX="125.0" layoutY="274.0" />
+      <TextField fx:id="sentText" editable="false" layoutX="125.0" layoutY="274.0" />
       <Label fx:id="kundeCreated" layoutX="457.0" layoutY="100.0" />
       <Label layoutX="31.0" layoutY="304.0" prefHeight="35.0" prefWidth="169.0" text="Recieved?">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="mail1" editable="false" layoutX="125.0" layoutY="309.0" />
+      <TextField fx:id="arrivedText" editable="false" layoutX="125.0" layoutY="309.0" />
       <Label fx:id="pakkeOprettet" layoutX="456.0" layoutY="109.0" />
       <Text fontSmoothingType="LCD" layoutX="81.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Package" textAlignment="CENTER">
          <font>

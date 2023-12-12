@@ -14,15 +14,15 @@
             <Image url="@pngtree-line-white-background-business-picture-image_1326839.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="87.0" layoutY="56.0" mnemonicParsing="false" onAction="#switchToCreateCustomer" prefHeight="30.0" prefWidth="125.0" text="Opret kunde" />
-      <Button layoutX="87.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToCreatePackage" prefHeight="30.0" prefWidth="125.0" text="Opret pakke" />
-      <Button layoutX="87.0" layoutY="129.0" mnemonicParsing="false" onAction="#switchToCreateCompany" prefHeight="30.0" prefWidth="125.0" text="Opret firma" />
-      <Button layoutX="87.0" layoutY="166.0" mnemonicParsing="false" onAction="#switchToDeleteCustomer" prefHeight="30.0" prefWidth="125.0" text="Slet kunde" />
-      <Button layoutX="87.0" layoutY="203.0" mnemonicParsing="false" onAction="#switchToDeletePackage" prefHeight="30.0" prefWidth="125.0" text="Slet pakke" />
-      <Button layoutX="87.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchToDeleteCompany" prefHeight="30.0" prefWidth="125.0" text="Slet firma" />
-      <Button layoutX="87.0" layoutY="279.0" mnemonicParsing="false" onAction="#switchToSearchCustomer" prefHeight="30.0" prefWidth="125.0" text="Søg en kunde" />
-      <Button layoutX="87.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToSearchPackage" prefHeight="30.0" prefWidth="125.0" text="Søg en pakke" />
-      <Button layoutX="87.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToSearchCompany" prefHeight="30.0" prefWidth="125.0" text="Søg et firma" />
+      <Button layoutX="87.0" layoutY="56.0" mnemonicParsing="false" onAction="#switchToCreateCustomer" prefHeight="30.0" prefWidth="125.0" text="Create Costumer" />
+      <Button layoutX="87.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchToCreatePackage" prefHeight="30.0" prefWidth="125.0" text="Create Package" />
+      <Button layoutX="87.0" layoutY="129.0" mnemonicParsing="false" onAction="#switchToCreateCompany" prefHeight="30.0" prefWidth="125.0" text="Create Company" />
+      <Button layoutX="87.0" layoutY="166.0" mnemonicParsing="false" onAction="#switchToDeleteCustomer" prefHeight="30.0" prefWidth="125.0" text="Remove Costumer" />
+      <Button layoutX="87.0" layoutY="203.0" mnemonicParsing="false" onAction="#switchToDeletePackage" prefHeight="30.0" prefWidth="125.0" text="Remove Package" />
+      <Button layoutX="87.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchToDeleteCompany" prefHeight="30.0" prefWidth="125.0" text="Remove Company" />
+      <Button layoutX="87.0" layoutY="279.0" mnemonicParsing="false" onAction="#switchToSearchCustomer" prefHeight="30.0" prefWidth="125.0" text="Search Costumer" />
+      <Button layoutX="87.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToSearchPackage" prefHeight="30.0" prefWidth="125.0" text="Search Package" />
+      <Button layoutX="87.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToSearchCompany" prefHeight="30.0" prefWidth="125.0" text="Search Company" />
       <Text fontSmoothingType="LCD" layoutX="81.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Track and Trace" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
