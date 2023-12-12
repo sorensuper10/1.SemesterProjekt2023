@@ -9,6 +9,8 @@ private double weight;
 private String sender;
 private String reciever;
 private String finalDestination;
+
+private int startLocation;
 private boolean sent;
 private boolean arrived;
 
@@ -72,6 +74,14 @@ private boolean arrived;
 
     public void setFinalDestination(String finalDestination) {
         this.finalDestination = finalDestination;
+    }
+
+    public int getStartLocation() {
+        return startLocation;
+    }
+
+    public void setStartLocation(int startLocation) {
+        this.startLocation = startLocation;
     }
 
     public boolean isSent() {

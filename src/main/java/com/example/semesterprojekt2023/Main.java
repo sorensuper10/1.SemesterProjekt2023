@@ -1,16 +1,13 @@
 package com.example.semesterprojekt2023;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main extends Application {
-
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("trackandtrace.fxml"));
@@ -107,9 +104,10 @@ public class Main extends Application {
         System.out.println("25. Udskriv en kundes pakker");
         System.out.println("26. Opret en pakke til et firma");
         System.out.println("27. Udskriv firmaets pakker");
-        System.out.println("28. Ændre en pakkes info");
-        System.out.println("29. Ændre et firmas info");
-        System.out.println("30. Opdatere en pakkes lokation");
+        System.out.println("28. Udskriv en kundes pakker");
+        System.out.println("29. Udskriv en firmas pakker");
+        System.out.println("30. Firma afleverer en pakke");
+        System.out.println("31. Opdater transportinfo");
         System.out.println("Indtast valg");
         System.out.println("Tast 0 for at lukke program");
 
@@ -218,11 +216,24 @@ public class Main extends Application {
             case 27:
                 db.firmaPakker(1);
                 break;
+            case 28:
+                ArrayList <Package> kundePakker = db.kundePakker1(1);
+                udskrivPackages(kundePakker);
+                break;
+            case 29:
+                ArrayList <Package> firmaPakker = db.firmaPakker1(1);
+                udskrivPackages(firmaPakker);
+                break;
+            case 30:
+                db.opretForsendelse(p2,l1);
+                break;
+            case 31:
+                System.out.println();
+                break;
             case 0:
                 System.exit(0);
                 break;
         }
-
     }
 
     public static void udskrivCustomer(ArrayList<Customer> a) {
