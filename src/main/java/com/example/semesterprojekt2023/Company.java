@@ -1,7 +1,5 @@
 package com.example.semesterprojekt2023;
 
-import java.util.ArrayList;
-
 public class Company {
 
     private int CompanyID;
@@ -17,8 +15,6 @@ public class Company {
     private String companyMail;
 
     private String companyCVR;
-
-    ArrayList<Package> customerPackages = new ArrayList<>();
 
     public Company() {
     }

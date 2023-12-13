@@ -6,8 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class HelloController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
     private Label kundeCreated;
@@ -79,12 +77,6 @@ public class HelloController {
     private CheckBox delivered;
 
     @FXML
-    private TextField sendt;
-
-    @FXML
-    private TextField modtaget;
-
-    @FXML
     private TextField companyID;
 
     @FXML
@@ -104,17 +96,6 @@ public class HelloController {
 
     @FXML
     private TextField companyCVR;
-
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-
-    @FXML
-    protected void onOpretKundeClick() {
-        welcomeText.setText("Kunde er oprettet");
-    }
 
     @FXML
     protected void onOpretKundeClickIOpretKunde() {
@@ -152,6 +133,8 @@ public class HelloController {
         String ModtagerText = Modtager.getText();
         String endeStationText = Endestation.getText();
         int pakkeID = Integer.parseInt(pakkeIDText);
+        int senderText = Integer.parseInt(SenderText);
+        int recieverText = Integer.parseInt(ModtagerText);
         boolean oksent = false;
         if (sent.isSelected())
             oksent = true;
@@ -161,8 +144,8 @@ public class HelloController {
         p.setPackageID(pakkeID);
         p.setSize(pakkeStørrelseText);
         p.setWeight(pakkeVægtText);
-        p.setSender(SenderText);
-        p.setReciever(ModtagerText);
+        p.setSender1(senderText);
+        p.setReciever1(recieverText);
         p.setFinalDestination(endeStationText);
         p.setSent(oksent);
         p.setArrived(okdelivered);

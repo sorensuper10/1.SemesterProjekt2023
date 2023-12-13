@@ -1,7 +1,4 @@
 package com.example.semesterprojekt2023;
-
-import java.util.ArrayList;
-
 public class TransportationInfo {
     private int id;
     private int packageID;

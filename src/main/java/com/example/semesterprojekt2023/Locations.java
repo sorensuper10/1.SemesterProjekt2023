@@ -3,9 +3,7 @@ package com.example.semesterprojekt2023;
 import java.util.ArrayList;
 
 public class Locations {
-
     private int locationID;
-
     private String Address;
 
     public Locations() {

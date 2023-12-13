@@ -1,28 +1,26 @@
 package com.example.semesterprojekt2023;
 
-import java.util.ArrayList;
-
 public class Package {
-private int packageID;
-private double size;
-private double weight;
-private String sender;
-private String reciever;
-private String finalDestination;
-
-private int startLocation;
-private boolean sent;
-private boolean arrived;
+    private int packageID;
+    private double size;
+    private double weight;
+    private String sender;
+    private String reciever;
+    private int sender1;
+    private int reciever1;
+    private String finalDestination;
+    private boolean sent;
+    private boolean arrived;
 
     public Package() {
     }
 
-    public Package(int packageID, double size, double weight, String sender, String reciever, String finalDestination, boolean sent, boolean arrived) {
+    public Package(int packageID, double size, double weight, int sender, int reciever, String finalDestination, boolean sent, boolean arrived) {
         this.packageID = packageID;
         this.size = size;
         this.weight = weight;
-        this.sender = sender;
-        this.reciever = reciever;
+        this.sender1 = sender;
+        this.reciever1 = reciever;
         this.finalDestination = finalDestination;
         this.sent = sent;
         this.arrived = arrived;
@@ -68,20 +66,28 @@ private boolean arrived;
         this.reciever = reciever;
     }
 
+    public int getSender1() {
+        return sender1;
+    }
+
+    public void setSender1(int sender1) {
+        this.sender1 = sender1;
+    }
+
+    public int getReciever1() {
+        return reciever1;
+    }
+
+    public void setReciever1(int reciever1) {
+        this.reciever1 = reciever1;
+    }
+
     public String getFinalDestination() {
         return finalDestination;
     }
 
     public void setFinalDestination(String finalDestination) {
         this.finalDestination = finalDestination;
-    }
-
-    public int getStartLocation() {
-        return startLocation;
-    }
-
-    public void setStartLocation(int startLocation) {
-        this.startLocation = startLocation;
     }
 
     public boolean isSent() {
@@ -106,8 +112,8 @@ private boolean arrived;
                 "packageID=" + packageID +
                 ", size=" + size +
                 ", weight=" + weight +
-                ", sender='" + sender + '\'' +
-                ", reciever='" + reciever + '\'' +
+                ", sender='" + sender1 + '\'' +
+                ", reciever='" + reciever1 + '\'' +
                 ", finalDestination='" + finalDestination + '\'' +
                 ", sent=" + sent +
                 ", arrived=" + arrived +

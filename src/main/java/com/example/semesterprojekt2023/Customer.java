@@ -1,12 +1,12 @@
 package com.example.semesterprojekt2023;
-
-import java.util.ArrayList;
-
 public class Customer {
     private int costumerID;
-    private String costumerName, costumerLastName, costumerAddress, costumerPostalcode, costumerPhone, costumerMail;
-
-    ArrayList<Package> customerPackages = new ArrayList<>();
+    private String costumerName;
+    private String costumerLastName;
+    private String costumerAddress;
+    private String costumerPostalcode;
+    private String costumerPhone;
+    private String costumerMail;
 
     public Customer() {
     }
