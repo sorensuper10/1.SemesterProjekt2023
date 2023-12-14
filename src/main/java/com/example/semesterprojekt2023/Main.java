@@ -23,9 +23,9 @@ public class Main extends Application {
         Scanner input = new Scanner(System.in);
 
         ArrayList<Customer> costumerTabel = new ArrayList<Customer>();
+        ArrayList<Package> packageTabel = new ArrayList<Package>();
         ArrayList<Company> companyTabel = new ArrayList<Company>();
         ArrayList<Locations> locationTabel = new ArrayList<Locations>();
-        ArrayList<Package> packageTabel = new ArrayList<Package>();
         ArrayList<TransportationInfo> transportationInfoTabel = new ArrayList<TransportationInfo>();
 
         Customer c1 = new Customer(1, "Søren", "Hansen", "Æblevej 2", "4700", "12345678", "sorenhansen@gmail.com");
