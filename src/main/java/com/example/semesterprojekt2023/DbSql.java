@@ -480,17 +480,4 @@ public class DbSql {
         }
         return pakkeTabel;
     }
-
-    public void opretForsendelse(Package p, Locations l) {
-        try{
-        createPackage(p);                                        //next
-        String sql = "Insert into Transportationinfo (packageID, Destination, currentLocation)";
-        sql += " values(" + String.valueOf(p.getPackageID()) + "," + l.getLocationID() + "," + l.getLocationID() + ")";
-        Statement stmt = connection.createStatement();
-        stmt.execute(sql);
-        stmt.close();
-    } catch (SQLException throwables) {
-        throwables.printStackTrace();
-    }
-  }
 }

@@ -31,7 +31,7 @@ public class Main extends Application {
         Customer c1 = new Customer(1, "Søren", "Hansen", "Æblevej 2", "4700", "12345678", "sorenhansen@gmail.com");
         costumerTabel.add(c1);
 
-        Package p1 = new Package(1, 20.5, 20.5, 1, 1, "Meny Næstved", true, true);
+        Package p1 = new Package(6, 70.5, 70.5, 4, 5, "7/11 Næstved", true, true);
         packageTabel.add(p1);
 
         Company co1 = new Company(1, "Dao", "Blommevej 8", "4700", "87654321", "dao@gmail.com", "1");
@@ -40,7 +40,7 @@ public class Main extends Application {
         Locations l1 = new Locations(1, "Rødovre terminal");
         locationTabel.add(l1);
 
-        TransportationInfo t1 = new TransportationInfo(1, 1, "Sjælland", "Jylland");
+        TransportationInfo t1 = new TransportationInfo(4, 4, "Jylland", "Fyn");
         transportationInfoTabel.add(t1);
 
         System.out.println("1. Opret kunde");
@@ -48,27 +48,26 @@ public class Main extends Application {
         System.out.println("3. Opret firma");
         System.out.println("4. Opret lokation");
         System.out.println("5. Opret transportinfo");
-        System.out.println("6. Opret forsendelse");
-        System.out.println("7. Udskriv alle kunder");
-        System.out.println("8. Udskriv alle pakker");
-        System.out.println("9. Udskriv alle firmaer");
-        System.out.println("10. Udskriv alle lokationer");
-        System.out.println("11. Udskriv alle transportinfo");
-        System.out.println("12. Søg på en bestemt kunde");
-        System.out.println("13. Søg på en bestemt pakke");
-        System.out.println("14. Søg på et bestemt firma");
-        System.out.println("15. Slet kunde");
-        System.out.println("16. Slet pakke");
-        System.out.println("17. Slet firma");
-        System.out.println("18. Ændre en kundes fornavn");
-        System.out.println("19. Ændre en kundes efternavn");
-        System.out.println("20. Ændre en kundes adresse");
-        System.out.println("21. Ændre en kundes postnummer");
-        System.out.println("22. Ændre en kundes telefonnummer");
-        System.out.println("23. Ændre en kundes mail");
-        System.out.println("24. Udskriv en kundes pakker");
-        System.out.println("25. Udskriv en firmas pakker");
-        System.out.println("26. GUI");
+        System.out.println("6. Udskriv alle kunder");
+        System.out.println("7. Udskriv alle pakker");
+        System.out.println("8. Udskriv alle firmaer");
+        System.out.println("9. Udskriv alle lokationer");
+        System.out.println("10. Udskriv alle transportinfo");
+        System.out.println("11. Søg på en bestemt kunde");
+        System.out.println("12. Søg på en bestemt pakke");
+        System.out.println("13. Søg på et bestemt firma");
+        System.out.println("14. Slet kunde");
+        System.out.println("15. Slet pakke");
+        System.out.println("16. Slet firma");
+        System.out.println("17. Ændre en kundes fornavn");
+        System.out.println("18. Ændre en kundes efternavn");
+        System.out.println("19. Ændre en kundes adresse");
+        System.out.println("20. Ændre en kundes postnummer");
+        System.out.println("21. Ændre en kundes telefonnummer");
+        System.out.println("22. Ændre en kundes mail");
+        System.out.println("23. Udskriv en kundes pakker");
+        System.out.println("24. Udskriv en firmas pakker");
+        System.out.println("25. GUI");
         System.out.println("Indtast valg");
         System.out.println("Tast 0 for at lukke program");
 
@@ -97,85 +96,82 @@ public class Main extends Application {
                     System.out.println("Transportinfo er oprettet");
                     break;
                 case 6:
-                    db.opretForsendelse(p1, l1);
-                    break;
-                case 7:
                     ArrayList<Customer> costumerList = db.udskrivAlleKunder();
                     udskrivCustomer(costumerList);
                     break;
-                case 8:
+                case 7:
                     ArrayList<Package> packageList = db.udskrivAllePakker();
                     udskrivPackages(packageList);
                     break;
-                case 9:
+                case 8:
                     ArrayList<Company> companyList = db.udskrivAlleFirmaer();
                     udskrivCompany(companyList);
                     break;
-                case 10:
+                case 9:
                     ArrayList<Locations> locationList = db.udskrivAlleLokationer();
                     udskrivLocation(locationList);
                     break;
-                case 11:
+                case 10:
                     ArrayList<TransportationInfo> transportInfoList = db.udskrivAlleTransportInfo();
                     udskrivTransportInfo(transportInfoList);
                     break;
-                case 12:
+                case 11:
                     Customer c = db.soegenkunde(1);
                     soegenkunde(c);
                     break;
-                case 13:
+                case 12:
                     Package p = db.soegenpakke(1);
                     soegenpakke(p);
                     break;
-                case 14:
+                case 13:
                     Company co = db.soegetfirma(1);
                     soegetfirma(co);
                     break;
-                case 15:
+                case 14:
                     db.removeCustomer(1);
                     System.out.println("Kunden er slettet");
                     break;
-                case 16:
+                case 15:
                     db.removePackage(1);
                     System.out.println("Pakken er slettet");
                     break;
-                case 17:
+                case 16:
                     db.removeCompany(1);
                     System.out.println("Firmaet er slettet");
                     break;
-                case 18:
+                case 17:
                     db.changeCustomerName();
                     System.out.println("Kundens navn er ændret");
                     break;
-                case 19:
+                case 18:
                     db.changeCustomerLastName();
                     System.out.println("Kundens efternavn er ændret");
                     break;
-                case 20:
+                case 19:
                     db.changeCustomerAdress();
                     System.out.println("Kundens adresse er ændret");
                     break;
-                case 21:
+                case 20:
                     db.changeCustomerPostalcode();
                     System.out.println("Kundens postnummer er ændret");
                     break;
-                case 22:
+                case 21:
                     db.changeCustomerPhone();
                     System.out.println("Kundens telefonnummer er ændret");
                     break;
-                case 23:
+                case 22:
                     db.changeCustomerMail();
                     System.out.println("Kundens mail er ændret");
                     break;
-                case 24:
+                case 23:
                     ArrayList<Package> kundePakker = db.kundePakker(1);
                     udskrivPackages(kundePakker);
                     break;
-                case 25:
+                case 24:
                     ArrayList<Package> firmaPakker = db.firmaPakker(1);
                     udskrivPackages(firmaPakker);
                     break;
-                case 26:
+                case 25:
                     launch();
                     break;
                 default:
