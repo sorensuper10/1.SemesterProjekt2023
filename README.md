@@ -15,7 +15,7 @@ Dette kan bruges til følgende oprettelser:
 - Pakke, man kan søge på en pakke gennem et pakkeID
 - Firma, man kan søge på et firma gennem et firmaID
 
-  Søgningerne bliver udskrevet i konsollen.
+Søgningerne bliver udskrevet i konsollen.
 
 Det er muligt at redigere i forskellige ting gennem søgninger på id.
 Dette kan gøres på forskellige elementer (se punkt 18-23 i switch).
