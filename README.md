@@ -50,5 +50,6 @@ Følgende funktioner kan køres på nuværende tidspunkt:
 25. Launcher GUI
 
 Ved brug af GUI virker alle knapperne på nuværende tidspunkt.
+
 Et forslag til en menu kunne se ud på følgende måde:
 ![Udklip](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/91a14376-fc98-4cc3-aa5a-332c5b22497a)
