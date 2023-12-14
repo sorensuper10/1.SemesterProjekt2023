@@ -47,4 +47,8 @@ Følgende funktioner kan køres på nuværende tidspunkt:
 22. Giver mulighed for at skifte kunde mail ved at søge på id gennem scanner
 23. Udskriver en kundes pakker i tabellen kundePakker gennem arraylist ved at søge på id gennem scanner
 24. Udskriver et firmas pakker i tabellen firmaPakker gennem arraylist ved at søge på id gennem scanner
-25. Launcher GUI    
+25. Launcher GUI
+
+Ved brug af GUI virker alle knapperne på nuværende tidspunkt.
+Et forslag til en menu kunne se ud på følgende måde:
+![Udklip](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/91a14376-fc98-4cc3-aa5a-332c5b22497a)
