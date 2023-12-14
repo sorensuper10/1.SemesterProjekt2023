@@ -51,8 +51,16 @@ Følgende funktioner kan køres på nuværende tidspunkt:
 
 Ved brug af GUI virker alle knapperne på nuværende tidspunkt.
 Et forslag til en menu kunne se ud på følgende måde:
-![Udklip](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/91a14376-fc98-4cc3-aa5a-332c5b22497a)
+![TrackandTrace](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/72f46338-1d46-45ca-a69a-3239919898ec)
 
 Hvis man trykker på opret bruger kommer denne skærm frem.
 
-![image](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/905ba33a-da4a-4d75-aefa-1c1a9ac29a87)
+![Opret bruger](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/911a8374-54d1-4435-a850-3fdba82eaf44)
+
+Hvis man trykker på slet bruger kommer denne skærm frem.
+
+![Slet bruger](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/a77930bc-326e-45cd-8b87-aa0788454a64)
+
+Hvis man trykker på søg bruger kommer denne skærm frem
+
+![Søg bruger](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/e115b84a-38f7-4be7-bd89-4920049e45d3)
