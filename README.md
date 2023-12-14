@@ -3,8 +3,8 @@
 Projektet omhandler udvikling af program til track 'n' trace.
 På nuværende tidspunkt er der lavet til at man kan skrive information ind til databasen via statisk input i koden.
 Dette kan bruges til følgende oprettelser:
-- En Kunde
-- En Pakke
+- En kunde
+- En pakke
 - Et firma
 - En lokation
 - Transportinfo
