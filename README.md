@@ -61,6 +61,15 @@ Hvis man trykker på slet bruger kommer denne skærm frem.
 
 ![Slet bruger](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/a77930bc-326e-45cd-8b87-aa0788454a64)
 
-Hvis man trykker på søg bruger kommer denne skærm frem
+Hvis man trykker på søg bruger kommer denne skærm frem.
 
 ![Søg bruger](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/e115b84a-38f7-4be7-bd89-4920049e45d3)
+
+Fremtidige muligheder:
+- Oprettelse af kunde via scanner input.
+- Oprettelse af pakke via scanner input.
+- Redigering af pakke placering via scanner input.
+- Søgning på kunder via scanner input.
+- Søgning på pakker via scanner input.
+- - Denne kan videreudvikles til også at udskrive opdateringer på pakken. Dette skal være alt information der ligger omkring den pakke (id) i update tabellen.
+- Potentielt inførsel af fuld GUI (komplet program).
