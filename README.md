@@ -3,8 +3,8 @@
 Projektet omhandler udvikling af program til track 'n' trace.
 På nuværende tidspunkt er der lavet til at man kan skrive information ind til databasen via statisk input i koden.
 Dette kan bruges til følgende oprettelser:
-- En Kunde
-- En Pakke
+- En kunde
+- En pakke
 - Et firma
 - En lokation
 - Transportinfo
@@ -15,7 +15,7 @@ Dette kan bruges til følgende oprettelser:
 - Pakke, man kan søge på en pakke gennem et pakkeID
 - Firma, man kan søge på et firma gennem et firmaID
 
-  Søgningerne bliver udskrevet i konsollen.
+Søgningerne bliver udskrevet i konsollen.
 
 Det er muligt at redigere i forskellige ting gennem søgninger på id.
 Dette kan gøres på forskellige elementer (se punkt 18-23 i switch).
@@ -47,4 +47,31 @@ Følgende funktioner kan køres på nuværende tidspunkt:
 22. Giver mulighed for at skifte kunde mail ved at søge på id gennem scanner
 23. Udskriver en kundes pakker i tabellen kundePakker gennem arraylist ved at søge på id gennem scanner
 24. Udskriver et firmas pakker i tabellen firmaPakker gennem arraylist ved at søge på id gennem scanner
-25. Launcher GUI    
+25. Launcher GUI
+
+Ved brug af GUI virker alle knapperne på nuværende tidspunkt.
+Et forslag til en menu kunne se ud på følgende måde:
+![TrackandTrace](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/72f46338-1d46-45ca-a69a-3239919898ec)
+
+Hvis man trykker på opret kunde kommer denne skærm frem hvor man kan oprette en kunde.
+
+![Opret bruger](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/911a8374-54d1-4435-a850-3fdba82eaf44)
+
+Hvis man trykker på slet kunde kommer denne skærm frem hvor man kan slette en kunde.
+
+![Slet bruger](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/a77930bc-326e-45cd-8b87-aa0788454a64)
+
+Hvis man trykker på søg kunde kommer denne skærm frem hvor man kan søge på en kunde.
+
+![Søg bruger](https://github.com/sorensuper10/1.SemesterProjekt2023/assets/89455430/e115b84a-38f7-4be7-bd89-4920049e45d3)
+
+De andre knapper virker på samme måde bare med pakker og firmaer.
+
+Fremtidige muligheder:
+- Oprettelse af kunde via scanner input.
+- Oprettelse af pakke via scanner input.
+- Redigering af pakke placering via scanner input.
+- Søgning på kunder via scanner input.
+- Søgning på pakker via scanner input.
+- - Denne kan videreudvikles til også at udskrive opdateringer på pakken. Dette skal være alt information der ligger omkring den pakke (id) i update tabellen.
+- Potentielt inførsel af fuld GUI (komplet program).
