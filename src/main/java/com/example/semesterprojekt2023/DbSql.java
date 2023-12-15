@@ -35,10 +35,10 @@ public class DbSql {
 
     public void createPackage(Package p) {
         try {
-            String sql = "insert into Package (packageID, packageSize, packageWeight, sender, reciever, finaldestination, sent, arrived)";
+            String sql = "insert into Package (packageID, packageSize, packageWeight, sender, reciever, finaldestination, sent, arrived, collected, transportationfirm)";
             sql += "values (" + String.valueOf(p.getPackageID()) + ",'" + p.getSize() + "','" + p.getWeight();
             sql += "','" + p.getSender1() + "','" + p.getReciever1() + "','" + p.getFinalDestination() + "',";
-            sql += String.valueOf(p.isSent()) + "," + String.valueOf(p.isArrived()) + ")";
+            sql += String.valueOf(p.isSent()) + "," + String.valueOf(p.isArrived()) + "," + String.valueOf(p.isCollected()) + "," + String.valueOf(p.getTransportationFirm()) + ")";
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();
@@ -47,9 +47,9 @@ public class DbSql {
         }
     }
 
-    public ArrayList createCompany(Company co) {
+    public ArrayList createTransportationfirm(Company co) {
         try {
-            String sql = "insert into Company (companyID, companyName, companyAdress, companyPostalcode, companyPhone, companyMail, companyCVR)";
+            String sql = "insert into Transportfirm (companyID, companyName, companyAdress, companyPostalcode, companyPhone, companyMail, companyCVR)";
             sql += "values (" + String.valueOf(co.getCompanyID()) + ",'" + co.getCompanyName() + "','" + co.getCompanyAddress();
             sql += "','" + co.getCompanyPostalCode() + "','" + co.getCompanyPhone() + "','" + co.getCompanyMail() + "',";
             sql += "'" + (co.getCompanyCVR()) + "'" + ")";
@@ -75,11 +75,12 @@ public class DbSql {
         return null;
     }
 
-    public ArrayList createTransportationInfo(TransportationInfo t) {
+    public ArrayList createSender(Sender s) {
         try {
-            String sql = "insert into Transportationinfo (ID, packageID, Destination, currentLocation)";
-            sql += "values (" + String.valueOf(t.getId()) + "," + String.valueOf(t.getPackageID()) + ",'" + t.getDestination() + "','";
-            sql += t.getCurrentLocation() + "')";
+            String sql = "insert into Sender (companyID, companyName, companyAdress, companyPostalcode, companyPhone, companyMail, companyCVR)";
+            sql += "values (" + String.valueOf(s.getCompanyID()) + ",'" + s.getCompanyName() + "','" + s.getCompanyAddress();
+            sql += "','" + s.getCompanyPostalCode() + "','" + s.getCompanyPhone() + "','" + s.getCompanyMail() + "',";
+            sql += "'" + (s.getCompanyCVR()) + "'" + ")";
             Statement stmt = connection.createStatement();
             stmt.execute(sql);
             stmt.close();
@@ -250,6 +251,9 @@ public class DbSql {
                 int x1 = rs.getInt("Arrived");
                 b = x1 == 1;
                 p.setArrived(b);
+                int x2 = rs.getInt("Collected");
+                b = x2 == 1;
+                p.setCollected(b);
                 return p;
             }
             stmt.close();
@@ -479,5 +483,55 @@ public class DbSql {
             throwables.printStackTrace();
         }
         return pakkeTabel;
+    }
+
+    public String getCustomerName(int customerID) {
+        try {
+            String sql = "select * from Customer where customerID =" + String.valueOf(customerID);
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                String fnavn = rs.getString("customerName");
+                String enavn = rs.getString("customerLastName");
+                String navn = fnavn + " " + enavn;
+                return navn;
+            }
+            stmt.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getCompanyName(int companyID) {
+        try {
+            String sql = "select * from Sender where companyID =" + String.valueOf(companyID);
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                String firmanavn = rs.getString("companyName");
+                return firmanavn;
+            }
+            stmt.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getSenderName(int companyID) {
+        try {
+            String sql = "select * from Transportfirm where companyID =" + String.valueOf(companyID);
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                String firmanavn = rs.getString("companyName");
+                return firmanavn;
+            }
+            stmt.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
     }
 }

@@ -12,18 +12,32 @@ public class Package {
     private boolean sent;
     private boolean arrived;
 
+    private boolean collected;
+
+    private int transportationFirm;
+
+    public int getTransportationFirm() {
+        return transportationFirm;
+    }
+
+    public void setTransportationFirm(int transportationFirm) {
+        this.transportationFirm = transportationFirm;
+    }
+
     public Package() {
     }
 
-    public Package(int packageID, double size, double weight, int sender, int reciever, String finalDestination, boolean sent, boolean arrived) {
+    public Package(int packageID, double size, double weight, int sender1, int reciever1, String finalDestination, boolean sent, boolean arrived, boolean collected, int transportationFirm) {
         this.packageID = packageID;
         this.size = size;
         this.weight = weight;
-        this.sender1 = sender;
-        this.reciever1 = reciever;
+        this.sender1 = sender1;
+        this.reciever1 = reciever1;
         this.finalDestination = finalDestination;
         this.sent = sent;
         this.arrived = arrived;
+        this.collected = collected;
+        this.transportationFirm = transportationFirm;
     }
 
     public int getPackageID() {
@@ -106,17 +120,29 @@ public class Package {
         this.arrived = arrived;
     }
 
+    public boolean isCollected() {
+        return collected;
+    }
+
+    public void setCollected(boolean collected) {
+        this.collected = collected;
+    }
+
     @Override
     public String toString() {
         return "Package{" +
                 "packageID=" + packageID +
                 ", size=" + size +
                 ", weight=" + weight +
-                ", sender='" + sender1 + '\'' +
-                ", reciever='" + reciever1 + '\'' +
+                ", sender='" + sender + '\'' +
+                ", reciever='" + reciever + '\'' +
+                ", sender1=" + sender1 +
+                ", reciever1=" + reciever1 +
                 ", finalDestination='" + finalDestination + '\'' +
                 ", sent=" + sent +
                 ", arrived=" + arrived +
+                ", collected=" + collected +
+                ", transportationFirm=" + transportationFirm +
                 '}';
     }
 }

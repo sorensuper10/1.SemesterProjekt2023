@@ -71,7 +71,7 @@ public class SceneController {
     }
 
     public void switchToSearchPackage(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Søgpakke.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Searchpackage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

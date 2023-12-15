@@ -65,10 +65,21 @@ public class HelloController {
     private TextField Endestation;
 
     @FXML
+    private TextField recieverNameText;
+
+    @FXML
+    private TextField transportFirmText;
+
+    @FXML TextField collected;
+
+    @FXML
     private TextField sentText;
 
     @FXML
     private TextField arrivedText;
+
+    private
+    @FXML TextField collectedText;
 
     @FXML
     private CheckBox sent;
@@ -172,7 +183,7 @@ public class HelloController {
         co.setCompanyPhone(companyPhoneText);
         co.setCompanyMail(companyMailText);
         co.setCompanyCVR(companyCVRText);
-        db.createCompany(co);
+        db.createTransportationfirm(co);
         firmaOprettet.setText("Firma er oprettet");
     }
 
@@ -225,13 +236,18 @@ public class HelloController {
         String pakkeIDText = pakkeID.getText();
         int pakkeID = Integer.parseInt(pakkeIDText);
         p = db.soegenpakke(pakkeID);
+        String companyName = db.getSenderName(Integer.parseInt(p.getSender()));
+        String recieverName = db.getCustomerName(Integer.parseInt(p.getReciever()));
+        String transportFirmName = db.getCompanyName(Integer.parseInt(p.getSender()));
         String ps = String.valueOf(p.getSize());
         pakkeStørrelse.setText(ps);
         String pv = String.valueOf(p.getWeight());
         pakkeVægt.setText(pv);
-        Sender.setText(p.getSender());
+        Sender.setText(companyName);
         Modtager.setText(p.getReciever());
+        recieverNameText.setText(recieverName);
         Endestation.setText(p.getFinalDestination());
+        transportFirmText.setText(transportFirmName);
         if (p.isSent())
             sentText.setText("Yes");
         else
@@ -240,6 +256,12 @@ public class HelloController {
             arrivedText.setText("Yes");
         else
             arrivedText.setText("No");
+        if (p.isCollected())
+            collectedText.setText("Yes");
+        else
+            collectedText.setText("No");
+
+
     }
 
     @FXML

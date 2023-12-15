@@ -26,13 +26,16 @@ public class Main extends Application {
         ArrayList<Package> packageTabel = new ArrayList<Package>();
         ArrayList<Company> companyTabel = new ArrayList<Company>();
         ArrayList<Locations> locationTabel = new ArrayList<Locations>();
-        ArrayList<TransportationInfo> transportationInfoTabel = new ArrayList<TransportationInfo>();
+        ArrayList<Sender> senderTabel = new ArrayList<Sender>();
 
         Customer c1 = new Customer(1, "Søren", "Hansen", "Æblevej 2", "4700", "12345678", "sorenhansen@gmail.com");
         costumerTabel.add(c1);
 
-        Package p1 = new Package(6, 70.5, 70.5, 4, 5, "7/11 Næstved", true, true);
+        Package p1 = new Package(1, 70.5, 70.5, 1, 1, "7/11 Næstved", true, true, false,1);
         packageTabel.add(p1);
+
+        Package p2 = new Package(2, 30.5, 30.5, 1, 1, "Meny Næstved", true, true, false,1);
+        packageTabel.add(p2);
 
         Company co1 = new Company(1, "Dao", "Blommevej 8", "4700", "87654321", "dao@gmail.com", "1");
         companyTabel.add(co1);
@@ -40,8 +43,8 @@ public class Main extends Application {
         Locations l1 = new Locations(1, "Rødovre terminal");
         locationTabel.add(l1);
 
-        TransportationInfo t1 = new TransportationInfo(4, 4, "Jylland", "Fyn");
-        transportationInfoTabel.add(t1);
+        Sender s1 = new Sender(1,"Coolshop","Æblevej 2", "4700","12345678","coolshop@gmail.com","1");
+        senderTabel.add(s1);
 
         System.out.println("1. Opret kunde");
         System.out.println("2  Opret pakke");
@@ -80,11 +83,11 @@ public class Main extends Application {
                     System.out.println("Kunde er oprettet");
                     break;
                 case 2:
-                    db.createPackage(p1);
+                    db.createPackage(p2);
                     System.out.println("Pakke er oprettet");
                     break;
                 case 3:
-                    db.createCompany(co1);
+                    db.createTransportationfirm(co1);
                     System.out.println("Firma er oprettet");
                     break;
                 case 4:
@@ -92,8 +95,8 @@ public class Main extends Application {
                     System.out.println("Lokation er oprettet");
                     break;
                 case 5:
-                    db.createTransportationInfo(t1);
-                    System.out.println("Transportinfo er oprettet");
+                    db.createSender(s1);
+                    System.out.println("Sender er oprettet");
                     break;
                 case 6:
                     ArrayList<Customer> costumerList = db.udskrivAlleKunder();
