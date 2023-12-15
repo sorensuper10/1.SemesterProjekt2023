@@ -75,3 +75,4 @@ Fremtidige muligheder:
 - Søgning på pakker via scanner input.
 - - Denne kan videreudvikles til også at udskrive opdateringer på pakken. Dette skal være alt information der ligger omkring den pakke (id) i update tabellen.
 - Potentielt inførsel af fuld GUI (komplet program).
+- Lav en klasse til use cases.
