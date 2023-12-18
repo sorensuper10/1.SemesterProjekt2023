@@ -34,9 +34,6 @@ public class Main extends Application {
         Package p1 = new Package(1, 70.5, 70.5, 1, 1, "7/11 Næstved", true, true, false,1);
         packageTabel.add(p1);
 
-        Package p2 = new Package(2, 30.5, 30.5, 1, 1, "Meny Næstved", true, true, false,1);
-        packageTabel.add(p2);
-
         Company co1 = new Company(1, "Dao", "Blommevej 8", "4700", "87654321", "dao@gmail.com", "1");
         companyTabel.add(co1);
 
@@ -83,7 +80,7 @@ public class Main extends Application {
                     System.out.println("Kunde er oprettet");
                     break;
                 case 2:
-                    db.createPackage(p2);
+                    db.createPackage(p1);
                     System.out.println("Pakke er oprettet");
                     break;
                 case 3:
