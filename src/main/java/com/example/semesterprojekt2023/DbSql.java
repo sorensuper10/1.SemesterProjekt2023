@@ -505,7 +505,7 @@ public class DbSql {
 
     public String getCompanyName(int companyID) {
         try {
-            String sql = "select * from Sender where companyID =" + String.valueOf(companyID);
+            String sql = "select * from Transportfirm where companyID =" + String.valueOf(companyID);
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
@@ -521,7 +521,7 @@ public class DbSql {
 
     public String getSenderName(int companyID) {
         try {
-            String sql = "select * from Transportfirm where companyID =" + String.valueOf(companyID);
+            String sql = "select * from Sender where companyID =" + String.valueOf(companyID);
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {

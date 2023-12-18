@@ -28,10 +28,10 @@ public class Main extends Application {
         ArrayList<Locations> locationTabel = new ArrayList<Locations>();
         ArrayList<Sender> senderTabel = new ArrayList<Sender>();
 
-        Customer c1 = new Customer(1, "Søren", "Hansen", "Æblevej 2", "4700", "12345678", "sorenhansen@gmail.com");
+        Customer c1 = new Customer(2, "Morten", "Jensen", "Melonvej 4", "4700", "87654321", "mortenjensen@gmail.com");
         costumerTabel.add(c1);
 
-        Package p1 = new Package(1, 70.5, 70.5, 1, 1, "7/11 Næstved", true, true, false,1);
+        Package p1 = new Package(2, 40.5, 40.5, 1, 1, "Meny Næstved", false, false, false,1);
         packageTabel.add(p1);
 
         Company co1 = new Company(1, "Dao", "Blommevej 8", "4700", "87654321", "dao@gmail.com", "1");
@@ -128,7 +128,7 @@ public class Main extends Application {
                     soegetfirma(co);
                     break;
                 case 14:
-                    db.removeCustomer(1);
+                    db.removeCustomer(3);
                     System.out.println("Kunden er slettet");
                     break;
                 case 15:
